@@ -11,32 +11,38 @@ import { addToCart } from "../../redux/actions/cartActions";
 import { payUsingPaytm } from "../../service/api";
 import { post } from "../../utils/paytm";
 
-const LeftContainer = styled(Box)(({theme}) => ({
-    minWidth: '40%',
-    padding: '40px 0 0 80px',
-    [theme.breakpoints.down('lg')]: {
-        padding: '20px 40px'
-    }
-}))
+const LeftContainer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  maxWidth: "350px",
+  padding: "20px",
+  margin: "auto",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+}));
+
  
  
 
 const Image = styled("img")({
+  width: "100%",
+  height: "auto",
+  maxHeight: "320px",      // <-- this prevents stretching & overlap
+  objectFit: "contain",
   padding: "15px",
 });
 
-const StyledButton = styled(Button)(({theme}) => ({
-    width: '48%',
-    borderRadius: '2px',
-    height: '50px',
-    color: '#fff',
-    [theme.breakpoints.down('lg')]: {
-        width: '46%'
-    },
-    [theme.breakpoints.down('sm')]: {
-        width: '48%'
-    }
-}))
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  width: "100%",        // Equal width buttons
+  borderRadius: "2px",
+  height: "50px",
+  color: "#fff",
+  marginTop: "12px",    // Clean spacing between buttons
+  textTransform: "none", // Optional: Makes text cleaner like Flipkart
+  fontWeight: 600        // Optional: Enhances appearance
+}));
+
 
 
 
@@ -74,17 +80,29 @@ navigate('/cart')
       >
         <Image src={product.detailUrl} alt="details" />
       </Box>
+
+
       <StyledButton
-        variant="contained" onClick={() => addItemToCart()}
-        style={{ marginRight: 10, background: "#ff9f00" }}
-      >
-        <ShoppingCartIcon />
-        Add to Cart
-      </StyledButton>
-      <StyledButton variant="contained"  onClick = {() => buyNow()}    style={{ background: "#fb541b" }}>
-        <FlashOnIcon />
-        Buy Now
-      </StyledButton>
+  variant="contained"
+  onClick={addItemToCart}
+  style={{ background: "#ff9f00" }}
+>
+  <ShoppingCartIcon />
+  &nbsp; Add to Cart
+</StyledButton>
+
+<StyledButton
+  variant="contained"
+  onClick={buyNow}
+  style={{ background: "#fb541b" }}
+>
+  <FlashOnIcon />
+  &nbsp; Buy Now
+</StyledButton>
+
+
+
+
     </LeftContainer>
   );
 };

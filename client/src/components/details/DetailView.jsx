@@ -23,20 +23,20 @@ const Component = styled(Box)`
 
 const Container = styled(Grid)(({theme}) => ({
   background: '#ffffff',
-    display: 'flex',
-    [theme.breakpoints.down('md')]: {
-      margin: 0
-    }
-}))
-  
-
+  // ❌ removed display:flex
+  [theme.breakpoints.down('md')]: {
+    margin: 0
+  }
+}));
 
 const RightContainer = styled(Grid)`
-    margin-top: 50px;
-    & > p {
-        margin-top: 10px;
-    }
+  margin-top: 50px;
+  padding: 0 20px;   // <-- Added padding to avoid overlap
+  & > p {
+    margin-top: 10px;
+  }
 `;
+
 
 const DetailView = () => {
   const dispatch = useDispatch();

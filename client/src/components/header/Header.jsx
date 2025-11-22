@@ -87,16 +87,16 @@ const Header = () => {
         </MenuButton>
 
         <Drawer open={open} onClose={handleClose}>
-            
-          {list()} 
+
+          {list()}
         </Drawer>
 
         <Component to="/">
-          <img src={logoURL} alt="logo" style={{ width: 75 }} />
+          {/* <img src={logoURL} alt="logo" style={{ width: 75 }} /> */}
           <Box style={{ display: "flex" }}>
             <SubHeading>
               Explore&nbsp;
-              <Box component="span" style={{ color: "#ffe500" }}>
+              <Box component="span" style={{ color: "#ffe500", }}>
                 {" "}
                 Plus
               </Box>
