@@ -25,7 +25,7 @@ Users can browse products, add them to cart, and place orders.
 ## ⚙️ Installation & Setup
 
 1. Clone the repository
- git clone https://github.com/your-username/repo-name.git
+ git clone https://github.com/adars-24/E-Commerce-Website.git
 
 2. Install dependencies
  npm install
